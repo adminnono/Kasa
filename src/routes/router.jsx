@@ -23,7 +23,7 @@ const HeaderFooterLayout = () => {
 
 export const router = createBrowserRouter([
   {
-    element: <HeaderFooterLayout />, // Utilise HeaderFooterLayout comme layout pour toutes les routes définies ci-dessous
+    element: <HeaderFooterLayout />, // Utilise HeaderFooterLayout comme layout pour toutes les routes définies en dessous
     errorElement: <ErrorPageNotFound />, // Spécifie la page d'erreur à afficher en cas de route non trouvée
     children: [
       {
