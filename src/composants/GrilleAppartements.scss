@@ -1,0 +1,21 @@
+@use "../scss/PaletteCouleur.scss" as colors;
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* Grille de 3 colonnes */
+  gap: 50px; /* Pas d'espacement entre les éléments */
+  padding: 2rem; 
+  border-radius: 1vw;
+  background-color: colors.$background-dark;
+  margin: 0 auto;
+  }
+
+
+@media screen and (width <= 768px) {
+  .grid {
+    justify-content: center;
+    background-color: colors.$grid-background-light;
+    padding: 0;
+    grid-template-columns: 1fr; /* Passer à une seule colonne sur les petits écrans */
+  }
+}
