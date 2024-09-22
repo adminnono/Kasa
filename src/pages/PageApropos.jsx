@@ -7,7 +7,7 @@ import "./PageApropos.scss";
 function About() {
   return (
     <>
-      {/* Affiche la bannière d'image en haut de la page */}
+      {/* Afficher la bannière d'image en haut de la page */}
       <ImageBanner />
 
       {/* Conteneur pour les différentes sections de description */}
