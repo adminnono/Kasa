@@ -1,6 +1,6 @@
 import React from "react"; 
 import ReactDOM from "react-dom/client"; 
-import { RouterProvider } from "react-router-dom"; 
+import { RouterProvider } from "react-router-dom";  
 import { router } from "./routes/router"; 
 
 // Crée la racine de l'application React et la monte sur l'élément avec l'ID "root"

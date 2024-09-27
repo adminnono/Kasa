@@ -1,16 +1,18 @@
 import React from "react"; 
 import { DescriptionPanel } from "../composants/Collapses";  
-import { ImageBanner } from "../composants/BannièreImages"; 
+import StaticBanner from "../composants/StaticBanner"; // Importe le nouveau composant
 import "./PageApropos.scss"; 
 
 
 function About() {
-  return (
+  return (  
     <>
-      {/* Afficher la bannière d'image en haut de la page */}
-      <ImageBanner />
-
-      {/* Conteneur pour les différentes sections de description */}
+      
+      
+      <div className="about-page">
+      <StaticBanner /> {/* Utilisation de la bannière statique */}
+      {/* Autres contenus de la page A propos */}
+    </div>
       <div className="about__container">
         {/* Chaque section utilise le composant DescriptionPanel pour afficher un titre et un contenu */}
         <DescriptionPanel title="Fiabilité" content="Les annonces postées sur Kasa garantissent une fiabilité totale. Les photos sont conformes aux logements, et toutes les informations sont régulièrement vérifiées par nos équipes." />

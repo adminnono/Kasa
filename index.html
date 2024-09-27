@@ -1,30 +1,32 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en"> 
   <head>
-    <meta charset="UTF-8" /> 
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" /> 
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /> 
-    
+    <meta charset="UTF-8" /> <!-- Définit l'encodage de caractères à UTF-8 pour supporter une large gamme de caractères -->
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" /> <!-- Lien vers l'icône de la page (favicon), ici un fichier SVG -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /> <!-- Assure que la mise en page est adaptée aux écrans mobiles -->
+
+    <!-- Préconnexion pour améliorer les performances du chargement des polices en préparant la connexion -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    
+
+    <!-- Lien pour charger la police "Roboto" depuis Google Fonts --> 
     <link
       href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap"
       rel="stylesheet"
     />
-    
-    <!-- Ajout d'une Font Awesome pour l'utilisation d'icônes -->
+     
+    <!-- Intégration de Font Awesome pour l'utilisation d'icônes via un kit -->
     <script src="https://kit.fontawesome.com/69462182e3.js" crossorigin="anonymous"></script>
-    
-    <!-- Chargement du fichier principal React -->
+
+    <!-- Lien pour charger le fichier principal React (compilé via Vite) -->
     <script type="module" src="/src/main.jsx"></script>
     
-    <title>Projet Kasa Arnaud Dujardin</title> 
+    <title>Projet Kasa Arnaud Dujardin</title> <!-- Titre de la page affiché dans l'onglet du navigateur -->
   </head>
   
   <body>
     <!-- Conteneur principal où l'application React sera rendue -->
-    <div id="root"></div>
+    <div id="root"></div> <!-- L'application React est montée dans cette div avec l'ID "root" -->
   </body>
 </html>
 
