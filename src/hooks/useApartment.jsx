@@ -1,7 +1,6 @@
-import { useEffect, useState } from "react"; 
+import { useEffect, useState } from "react";
 import { useLocation } from "react-router-dom"; 
 
- 
 export function useApartment() {
   // État pour stocker les informations de l'appartement
   const [flat, setFlat] = useState(null);
@@ -27,7 +26,14 @@ export function useApartment() {
         // Met à jour l'état avec les informations de l'appartement trouvé
         setFlat(flat);
       })
-      .catch(console.error); // Gère les erreurs potentielles de la requête
+      .catch((error) => {
+        // Si l'erreur est une AbortError, on l'ignore
+        if (error.name === 'AbortError') {
+          console.log("Fetch aborted");
+        } else {
+          console.error(error); // Sinon, on log les autres erreurs
+        }
+      });
 
     // Fonction de nettoyage qui annule la requête fetch si le composant est démonté
     return () => {
@@ -35,6 +41,5 @@ export function useApartment() {
     };
   }, [location.state?.apartmentId]); // Dépendance : le hook se déclenche lorsque l'identifiant de l'appartement change
 
- 
   return flat;
 }
