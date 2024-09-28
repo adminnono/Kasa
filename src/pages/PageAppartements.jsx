@@ -1,10 +1,9 @@
-import React, { useEffect, useState } from "react"; 
-import { DescriptionPanel } from "../composants/Collapses"; 
-import "./PageAppartements.scss"; 
-import { ImageBanner } from "../composants/BannièreImages"; 
-import { ApartmentHeader } from "../composants/InfosAppartements"; 
-import { useApartment } from "../hooks/useApartment"; 
-
+import React from "react";
+import "./PageAppartements.scss";
+import { ImageBanner } from "../composants/BannièreImages";
+import { ApartmentHeader } from "../composants/InfosAppartements";
+import { useApartment } from "../hooks/useApartment";
+import ApartmentDetailsPanel from "../composants/ApartmentDetailsPanel";
 
 function ApartmentPage() {
   // Récupère les données de l'appartement en utilisant le hook personnalisé useApartment
@@ -19,19 +18,22 @@ function ApartmentPage() {
       <ImageBanner pictures={flat.pictures} />
 
       {/* Composant ApartmentHeader pour afficher les informations de base sur l'appartement (titre, localisation, etc.) */}
-      <ApartmentHeader flat={flat} /> 
+      <ApartmentHeader flat={flat} />
 
       <div className="apartment__description__area">
-        {/* Composant DescriptionPanel pour afficher la description de l'appartement */}
-        <DescriptionPanel title="Description" content={flat.description} />
+        {/* Nouveau composant ApartmentDetailsPanel pour afficher la description de l'appartement */}
+        <ApartmentDetailsPanel title="Description" content={flat.description} />
 
-        {/* Composant DescriptionPanel pour afficher la liste des équipements */}
-        <DescriptionPanel
+        {/* Nouveau composant ApartmentDetailsPanel pour afficher la liste des équipements */}
+        <ApartmentDetailsPanel
           title="Equipements"
-          content={flat.equipments.map((eq, i) => (
-            // Affiche chaque équipement dans une liste <li> et utilise un key unique pour chaque item
-            <li key={i}>{eq}</li>
-          ))}
+          content={
+            <ul>
+              {flat.equipments.map((eq, i) => (
+                <li key={i}>{eq}</li>
+              ))}
+            </ul>
+          }
         />
       </div>
     </div>
